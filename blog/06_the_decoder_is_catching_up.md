@@ -27,4 +27,4 @@ The pattern in the errors tells you why. Opus gets 100% on "Fraud or scam" and 0
 
 The encoder wins today. 56.6% vs 44.0%, 800x cheaper per prediction. Clear recommendation.
 
-But 44% on a 113-class problem without labels or a GPU is not a static number. If the next frontier model picks up another 15 points from scale alone, the encoder's lead disappears. And that model won't need your 58,000 labels, your training pipeline, or your thirty minutes of GPU time to get there.
+But 44% on a 113-class problem without labels or a GPU is not a static number. If the next frontier model picks up another 15 points from scale alone, the encoder's lead disappears. And that model won't need your 58,000 labels, your training pipeline, or your thirty minutes of GPU time to get there. It may not even need you.
