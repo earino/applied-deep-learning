@@ -1,3 +1,10 @@
+---
+title: "What Do You Teach When Compression Doesn't Produce a Speedup?"
+layout: default
+parent: Blog
+nav_order: 3
+---
+
 # What Do You Teach When Compression Doesn't Produce a Speedup?
 
 The plan for Week 5 was clean: students apply quantization to their model, benchmark the results, see the speedup, analyze whether compression hurts their weakest classes. Standard compression week. Every applied ML course has one.

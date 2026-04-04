@@ -1,3 +1,10 @@
+---
+title: "Picking a Model for Teaching"
+layout: default
+parent: Blog
+nav_order: 1
+---
+
 # Picking a Model for Teaching
 
 Spent the last two days trying to break a model.

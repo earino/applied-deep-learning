@@ -1,6 +1,14 @@
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-  - jekyll-remote-theme
-
 title: Applied Deep Learning
-description: ECBS5200 — Practical Deep Learning Engineering for Applied ML · CEU Vienna · Spring 2026
+description: ECBS5200 — Practical Deep Learning Engineering for Applied ML
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+color_scheme: light
+
+search_enabled: true
+
+aux_links:
+  "GitHub Repo": "https://github.com/earino/applied-deep-learning"
+
+footer_content: "ECBS5200 &mdash; Central European University, Vienna &mdash; Spring 2026"
+
+back_to_top: true
+back_to_top_text: "Back to top"

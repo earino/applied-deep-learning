@@ -1,3 +1,10 @@
+---
+title: "Model Cards Won't Tell You If Your Course Will Work"
+layout: default
+parent: Blog
+nav_order: 2
+---
+
 # Model Cards Won't Tell You If Your Course Will Work
 
 Picking a model for a research project: check the benchmarks, try it, move on. Picking a model for a teaching lab that 30 students will run for six weeks on free hardware: different exercise entirely.
