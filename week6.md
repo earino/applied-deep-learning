@@ -1,7 +1,8 @@
 ---
 title: "Week 6: Distillation and final model decision"
 layout: default
-nav_order: 9
+parent: Course Materials
+nav_order: 6
 ---
 
 # Week 6: Distillation and final model decision

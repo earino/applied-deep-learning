@@ -1,7 +1,8 @@
 ---
 title: "Week 5: Quantization and decoder economics"
 layout: default
-nav_order: 8
+parent: Course Materials
+nav_order: 5
 ---
 
 # Week 5: Quantization and decoder economics

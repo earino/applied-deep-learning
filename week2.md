@@ -1,7 +1,8 @@
 ---
 title: "Week 2: Controlled improvement and failure analysis"
 layout: default
-nav_order: 5
+parent: Course Materials
+nav_order: 2
 ---
 
 # Week 2: Controlled improvement and failure analysis

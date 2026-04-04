@@ -1,5 +1,5 @@
 ---
-title: "When Your "Ready to Use" Dataset Has the Same Category Listed Twice"
+title: "When Your \"Ready to Use\" Dataset Has the Same Category Listed Twice"
 layout: default
 parent: Blog
 nav_order: 4

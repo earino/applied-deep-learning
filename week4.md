@@ -1,7 +1,8 @@
 ---
 title: "Week 4: Error analysis, slices, calibration, decoder comparison"
 layout: default
-nav_order: 7
+parent: Course Materials
+nav_order: 4
 ---
 
 # Week 4: Error analysis, slices, calibration, decoder comparison

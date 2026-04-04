@@ -1,7 +1,8 @@
 ---
 title: "Week 1: Fine-tuning and data audit"
 layout: default
-nav_order: 4
+parent: Course Materials
+nav_order: 1
 ---
 
 # Week 1: Fine-tuning and data audit

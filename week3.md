@@ -1,7 +1,8 @@
 ---
 title: "Week 3: Parameter-efficient adaptation (LoRA/PEFT)"
 layout: default
-nav_order: 6
+parent: Course Materials
+nav_order: 3
 ---
 
 # Week 3: Parameter-efficient adaptation (LoRA/PEFT)
