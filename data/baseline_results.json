@@ -1,0 +1,22 @@
+{
+  "val": {
+    "accuracy": 0.542,
+    "macro_f1": 0.1324,
+    "weighted_f1": 0.4791,
+    "zero_f1_classes": 70,
+    "num_examples": 6430
+  },
+  "test": {
+    "accuracy": 0.5394,
+    "macro_f1": 0.1307,
+    "weighted_f1": 0.4793,
+    "zero_f1_classes": 63,
+    "num_examples": 21432
+  },
+  "majority_class": {
+    "label": "Incorrect information on your report",
+    "val_accuracy": 0.2305
+  },
+  "model": "TF-IDF (50k, 1-2gram) + LogReg (C=1.0, lbfgs)",
+  "num_classes": 113
+}

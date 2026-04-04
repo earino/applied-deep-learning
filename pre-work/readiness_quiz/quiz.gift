@@ -1,0 +1,174 @@
+// ECBS5200 Pre-Work Readiness Quiz
+// Moodle GIFT format — import via Site Administration > Question Bank > Import
+// Recommended setup: Practice quiz, unlimited attempts, best grade counts
+// Or: grade only if above 70%, counts toward participation (5%)
+
+$CATEGORY: ECBS5200 Pre-Work/Module 01 - Tokenization
+
+::M01-Q1 Subword tokenization::Why do modern models use subword tokenization instead of splitting text on spaces?{
+~It's faster to process subwords than whole words
+=A fixed vocabulary of subword pieces can represent any word, including rare and misspelled ones
+~Subwords are easier for humans to read
+~It was the first tokenization method invented
+}
+
+::M01-Q2 Truncation::A consumer complaint is 200 tokens long and you set max_length\=128. What happens to the last 72 tokens?{
+=They are silently dropped — the model never sees them
+~They are compressed into a summary token
+~They are stored separately and processed in a second pass
+~The model automatically extends to accommodate them
+}
+
+::M01-Q3 Attention mask::What does the attention mask tell the model?{
+~Which tokens are most important in the sentence
+=Which positions contain real tokens (1) and which are padding (0)
+~How much attention to pay to each word
+~Which tokens were truncated
+}
+
+::M01-Q4 Special tokens::What is the purpose of the [CLS] token?{
+~It marks where the text was truncated
+=It marks the start of the sequence; its representation becomes the sentence-level summary used for classification
+~It separates two different sentences
+~It indicates the language of the input
+}
+
+$CATEGORY: ECBS5200 Pre-Work/Module 02 - Pretrained Encoders
+
+::M02-Q1 Transfer learning::Why do we start with a pretrained model instead of training from scratch?{
+=The pretrained model already understands language patterns; we only need to teach it our specific task
+~Pretrained models are always more accurate
+~Training from scratch is not possible with PyTorch
+~Pretrained models don't need any further training
+}
+
+::M02-Q2 Classification head::What is the classification head in a text classification model?{
+~The first layer that reads the input tokens
+~The attention mechanism that weighs different tokens
+=A linear layer that takes the encoder's output and produces a score for each class
+~The tokenizer that converts text to numbers
+}
+
+$CATEGORY: ECBS5200 Pre-Work/Module 03 - Train vs Eval Mode
+
+::M03-Q1 Eval mode::What happens if you forget to call model.eval() before running predictions?{
+~The model will crash with an error
+~The predictions will be exactly the same
+=Dropout stays active, making predictions noisy and non-deterministic
+~The model will train on the test data
+}
+
+::M03-Q2 no_grad::What does torch.no_grad() do?{
+~It switches the model to eval mode
+~It prevents the model from making predictions
+=It disables gradient computation, saving memory during inference
+~It freezes all model parameters permanently
+}
+
+::M03-Q3 Train mode purpose::Why is dropout enabled during training but disabled during evaluation?{
+=During training, dropout prevents overfitting by randomly deactivating neurons. During evaluation, we want the full model's deterministic output.
+~Dropout makes training faster
+~Dropout is a bug that only appears during training
+~It doesn't matter — dropout has no effect on results
+}
+
+$CATEGORY: ECBS5200 Pre-Work/Module 04 - Confusion Matrices & Macro-F1
+
+::M04-Q1 Accuracy problem::You have a dataset where 90% of examples belong to class A. A model that always predicts class A achieves 90% accuracy. Why is this misleading?{
+=The model has learned nothing — it completely ignores all other classes, which is useless in practice
+~90% is too low to be useful
+~Accuracy should only be used with balanced datasets
+~The model is actually very good since 90% is a high score
+}
+
+::M04-Q2 Macro-F1::What does macro-F1 measure, and why do we prefer it for imbalanced datasets?{
+=It averages F1 across all classes equally, so rare classes count just as much as common ones
+~It only measures performance on the most common class
+~It weights classes by their frequency in the dataset
+~It measures how fast the model runs
+}
+
+::M04-Q3 Confusion matrix reading::In a confusion matrix, what do off-diagonal entries represent?{
+~Correct predictions
+=Misclassifications — the model predicted one class but the true label was a different class
+~Missing data
+~Padded tokens
+}
+
+$CATEGORY: ECBS5200 Pre-Work/Module 05 - Calibration
+
+::M05-Q1 Calibration definition::A model outputs 90% confidence on 100 predictions. If the model is well-calibrated, approximately how many of those 100 predictions should be correct?{
+=About 90
+~All 100
+~Exactly 90
+~It depends on the number of classes
+}
+
+::M05-Q2 Overconfidence::Most neural networks are overconfident. What does this mean in practice?{
+~They make too many predictions
+=When they say "95% confident," they are correct less than 95% of the time
+~They take too long to run
+~They use too much memory
+}
+
+::M05-Q3 Reliability diagram::On a reliability diagram, what does perfect calibration look like?{
+~A horizontal line at y\=1.0
+~A curve that starts high and drops off
+=A diagonal line from (0,0) to (1,1)
+~A vertical line at x\=0.5
+}
+
+$CATEGORY: ECBS5200 Pre-Work/Module 06 - LoRA/PEFT
+
+::M06-Q1 LoRA concept::What is the core idea behind LoRA (Low-Rank Adaptation)?{
+~Delete most of the model's layers to make it smaller
+~Train the model from scratch with fewer parameters
+=Freeze the pretrained weights and add small trainable matrices alongside them
+~Use a smaller vocabulary to reduce parameter count
+}
+
+::M06-Q2 PEFT benefit::If a model has 149 million parameters but LoRA makes only 1-2 million trainable, what are the practical benefits?{
+=Faster training, less GPU memory needed, and much smaller checkpoint files to save
+~The model becomes more accurate
+~The model can process longer text inputs
+~There are no benefits — more trainable parameters is always better
+}
+
+$CATEGORY: ECBS5200 Pre-Work/Module 07 - Quantization
+
+::M07-Q1 Quantization size::A model has 149 million parameters stored in FP32 (4 bytes each), totaling ~571 MB. If we quantize to INT8 (1 byte each), approximately how large is the model?{
+~286 MB
+=~144 MB
+~571 MB (same size)
+~57 MB
+}
+
+::M07-Q2 Quantization trade-off::What is the fundamental trade-off in quantization?{
+~Speed vs. accuracy — quantized models are always slower but more accurate
+=Size/cost vs. potential quality loss — using fewer bits per weight makes the model smaller and cheaper to serve, but may reduce accuracy slightly
+~Memory vs. vocabulary size
+~Training time vs. inference time
+}
+
+$CATEGORY: ECBS5200 Pre-Work/Module 08 - Distillation
+
+::M08-Q1 Soft vs hard labels::A dataset says a complaint is "billing dispute" (hard label). The teacher model says "70% billing dispute, 20% payment issue, 10% account management" (soft label). Why is the soft label more informative?{
+=It encodes relationships between classes — billing dispute and payment issue are related, which the hard label doesn't capture
+~Soft labels are always more accurate than hard labels
+~Hard labels contain errors that soft labels fix
+~Soft labels use less memory
+}
+
+::M08-Q2 Temperature::In distillation, what does increasing the temperature do to the teacher's output probabilities?{
+~Makes the highest probability even higher
+~Converts probabilities to hard labels
+=Spreads the probabilities more evenly across classes, revealing more information about class relationships
+~Reduces the number of classes
+}
+
+::M08-Q3 Distillation purpose::What is the goal of knowledge distillation?{
+~To make the teacher model larger and more accurate
+~To combine two models into one
+=To transfer knowledge from a large expensive model to a small cheap model that can be deployed more efficiently
+~To remove incorrect predictions from the training data
+}
