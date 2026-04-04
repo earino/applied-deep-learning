@@ -12,9 +12,9 @@ nav_order: 1
 **Slides:** [View in browser](week1/slides.html)
  · [Download PDF](week1/slides.pdf)
 
-**Lab notebook:** [week1_lab.ipynb](week1/week1_lab.ipynb)
+**Lab notebook:** [week1_lab.ipynb](https://github.com/earino/applied-deep-learning/blob/main/week1/week1_lab.ipynb)
 
-**Homework notebook:** [week1_homework.ipynb](week1/week1_homework.ipynb)
+**Homework notebook:** [week1_homework.ipynb](https://github.com/earino/applied-deep-learning/blob/main/week1/week1_homework.ipynb)
 
 **Memo rubric:** [week1_memo_rubric.md](week1/week1_memo_rubric.md)
 
