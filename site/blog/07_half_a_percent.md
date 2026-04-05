@@ -41,9 +41,7 @@ The question is not which model is better. The question is whether the rare-clas
 
 ## What changed
 
-Yi Tay [documented](https://www.yitay.net/blog/model-architecture-blogpost-encoders-prefixlm-denoising) something many practitioners noticed but few said out loud: encoder models did not disappear because they stopped working. They disappeared from the frontier because the field unified around more flexible decoder-centric ecosystems, and those models kept getting stronger.
-
-The result is that the old encoder advantage in inductive bias is no longer enough to settle the practical question. In some settings, especially where labels are many and training signal is sparse, decoder scale can outweigh it.
+The encoder advantage in inductive bias is no longer enough to settle the practical question. As Yi Tay [documented](https://www.yitay.net/blog/model-architecture-blogpost-encoders-prefixlm-denoising), encoder models did not disappear from the frontier because they stopped working. They disappeared because the field unified around decoder-centric ecosystems, and those decoders kept getting stronger — strong enough that their scale now compensates for the encoder's architectural edge, at least in settings where labels are many and training signal is sparse.
 
 The default tutorial story for classification is still encoder-first. For two-class sentiment on 50,000 balanced examples, that is still often the right instinct. For 113 imbalanced classes where the rare ones matter, it may not be.
 
