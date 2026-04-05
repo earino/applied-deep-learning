@@ -1,3 +1,9 @@
+---
+title: Syllabus
+layout: default
+nav_order: 2
+---
+
 # ECBS5200 — Data Science 4: Practical Deep Learning Engineering for Applied ML (2 credits)
 
 **Schedule:** 6 Wednesdays · two blocks each day (13:30–15:10 and 15:30–17:10)  
