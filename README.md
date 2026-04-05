@@ -18,7 +18,7 @@ Over six weeks, you work on one cumulative problem: classifying consumer financi
 
 | | |
 |---|---|
-| **Instructor** | Eduardo Ariño de la Rubia, Professor of Practice |
+| **Instructor** | [Eduardo Ariño de la Rubia](https://www.linkedin.com/in/earino/), Professor of Practice |
 | **Format** | 6 Wednesdays, two 100-minute blocks per day |
 | **Dates** | Apr 8, 15, 22, 29, May 6, 13 (2026) |
 | **Location** | CEU Vienna Campus |
@@ -125,7 +125,7 @@ This work is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/
 
 ## Author
 
-**Eduardo Ariño de la Rubia** (rubiae@ceu.edu)
+**[Eduardo Ariño de la Rubia](https://www.linkedin.com/in/earino/)** (rubiae@ceu.edu)
 
 Professor of Practice, Central European University. Former Senior Director of Data Science at Meta; Chief Data Scientist at Domino Data Lab.
 

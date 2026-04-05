@@ -8,8 +8,8 @@ nav_order: 2
 
 **Schedule:** 6 Wednesdays · two blocks each day (13:30–15:10 and 15:30–17:10)  
 **Dates:** Apr 8, Apr 15, Apr 22, Apr 29, May 6, May 13 (2026)  
-**Location:** CEU Vienna (room TBA)  
-**Instructor:** Eduardo Ariño de la Rubia (email/office hours TBA)
+**Location:** CEU Vienna, QS D-002 Tiered (except Apr 15: QS B-511)  
+**Instructor:** Eduardo Ariño de la Rubia · D-207 · Office hours by appointment · rubiae@ceu.edu
 
 ---
 
@@ -159,9 +159,8 @@ Students may not submit work they cannot explain.
 
 ## Contact details
 
-* **Instructor:** Eduardo Ariño de la Rubia — email/office hours TBA
+* **Instructor:** Eduardo Ariño de la Rubia — rubiae@ceu.edu — D-207 — office hours by appointment
 
-* **Teaching Assistant(s):** TBA
 
 ---
 

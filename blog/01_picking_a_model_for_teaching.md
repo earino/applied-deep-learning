@@ -7,30 +7,38 @@ nav_order: 1
 
 # Picking a Model for Teaching
 
-Spent the last two days trying to break a model.
+Picking a model for a research project: check the benchmarks, try it, move on. Picking a model for a teaching lab that 30 students will run for six weeks on free hardware: different exercise entirely.
 
-Not because there's anything wrong with it — ModernBERT-base is genuinely good. Fast, modern architecture, great benchmarks. I'm building a deep learning course at CEU where students fine-tune one model across six weeks, and I needed to know if this model would survive the whole semester on free Kaggle GPUs.
+I'm building a deep learning course at CEU where students fine-tune one model across six weeks — training, LoRA adaptation, error analysis, quantization, distillation. The model has to survive all of it on a free Kaggle T4. Benchmarks don't tell you if that's going to work.
 
-Turns out "good model" and "model I can hand to 30 students on free hardware" are very different questions.
+## What "works for teaching" actually means
 
-The first candidate was DeBERTa-v3-base. Better known, strong benchmarks. Initially killed it because a custom operation broke the quantization path I was planning. Later, the quantization approach changed entirely — which reopened the question of whether DeBERTa should have stayed in the running. More on that in a future post. For now: the decision to go with ModernBERT held up after re-examination, but the *reasons* turned out to be different than the original ones.
+The model needs to:
 
-ModernBERT loaded fine. Trained fine. Checkpointed and reloaded fine. LoRA adapters saved and reloaded with bit-identical predictions across three independent cycles. All great.
+- Fine-tune in under 40 minutes on a free T4 GPU
+- Save and reload checkpoints deterministically
+- Support LoRA adapters that produce bit-identical predictions after save/reload
+- Quantize to int8 for the compression week
+- Be open-licensed so students can use it for anything
 
-Then I tried to quantize it for the compression week.
+I started with DeBERTa-v3-base — strong benchmarks, well-known. A custom activation function broke the quantization pipeline. Killed it. ModernBERT-base (149M parameters, Apache 2.0, 2024) passed every check. Training, checkpointing, LoRA save/reload — all clean. Then I tried to quantize it.
 
-Int8 quantization cut the model from 571 MB to 144 MB. Beautiful. But when I loaded the quantized model on GPU, inference ran 12x slower. No error. No warning. ONNX Runtime silently fell back to CPU because its GPU provider doesn't support the quantized operations. You just have to... know that, apparently.
+## What broke
 
-I tried four different approaches to get GPU-accelerated compression working. The optimum library crashed with an illegal memory access that poisoned the entire CUDA session. torch.compile gave a 5% speedup — basically noise. Raw ONNX export worked but was slightly slower than plain PyTorch.
+Int8 quantization cut the model from 571 MB to 144 MB. Beautiful. But inference on GPU ran 12x slower. No error. No warning. ONNX Runtime had silently fallen back to CPU because its GPU provider doesn't support the quantized operations.
 
-A 149M parameter model on a GPU with 10x memory headroom doesn't need compression for speed. There's nothing to compress against.
+I tried four alternatives. The `optimum` library crashed with an illegal memory access that poisoned the CUDA session. `torch.compile` gave a 5% speedup — noise. Raw ONNX export worked but was slightly slower than plain PyTorch.
 
-Here's where it gets interesting for the course: the original plan was "students apply quantization, see speedup." The honest version is better. Students do the full exercise, measure carefully, discover it doesn't help for speed, hit the silent CPU fallback, and then reason about whether the 4x size reduction matters for their deployment scenario.
+The underlying problem: a 149M parameter model on a GPU with 10x memory headroom doesn't need compression for speed. There's nothing to compress against.
 
-"I benchmarked it and the speedup wasn't worth it" is a more useful thing to be able to say in an interview than "my professor showed me a demo where it worked."
+## Why this is a better lesson
 
-The dataset had its own surprise. 153 issue categories — except "Incorrect information on credit report" and "Incorrect information on your report" are the same category from different time periods. They're the model's top confusion pair. The model isn't confused. The labels are.
+The plan: students apply quantization, see speedup. The honest version is more valuable. Students do the full exercise, measure carefully, discover it doesn't help for speed, hit the silent CPU fallback, and then reason about whether the 4x size reduction matters for their deployment scenario.
 
-Eight verification notebooks. Every one broke at least once before passing. The total gap between "this model has good benchmarks" and "I can build a semester on this" took two days to close.
+"I benchmarked it and the speedup wasn't worth it" is a more useful thing to say in an interview than "my professor showed me a demo where it worked."
+
+## The gap
+
+Eight verification notebooks. Every one broke at least once before passing. Two days from "this model has good benchmarks" to "I can build a semester on this."
 
 If you're building anything that other people have to run reliably — a course, an internal tool, a product — model benchmarks are the beginning of the conversation, not the end.

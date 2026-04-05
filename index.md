@@ -10,5 +10,5 @@ nav_order: 1
 
 A hands-on graduate course in post-training deep learning engineering. Fine-tune, adapt, analyze, compress, and justify a real model under real constraints.
 
-**Instructor:** Eduardo Ariño de la Rubia · **6 Wednesdays** · Apr 8 – May 13, 2026
+**Instructor:** [Eduardo Ariño de la Rubia](https://www.linkedin.com/in/earino/) · **6 Wednesdays** · Apr 8 – May 13, 2026
 
