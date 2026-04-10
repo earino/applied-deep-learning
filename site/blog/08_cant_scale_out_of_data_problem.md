@@ -63,4 +63,4 @@ Class weighting: sqrt-inverse frequency, normalized to mean=1. Label smoothing: 
 
 **Not tested on the 8B:** focal loss, class weighting, oversampling, smaller batch sizes.
 
-*Full learning curves, per-epoch logs, and infrastructure notes: [experiment log](https://github.com/earino/applied-deep-learning/blob/main/experiments/EXPERIMENT_LOG_2026_04_08.md).*
+*All runs used the same canonical stratified split (57,846 train / 6,430 val, seed=42) and early stopping on validation macro F1.*
