@@ -2,7 +2,7 @@
 title: "You Can't Scale Your Way Out of a Data Problem"
 layout: default
 parent: Blog
-nav_order: 8
+nav_order: 2
 ---
 
 # You Can't Scale Your Way Out of a Data Problem

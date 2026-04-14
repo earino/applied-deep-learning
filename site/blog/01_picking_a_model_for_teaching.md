@@ -2,7 +2,7 @@
 title: "Picking a Model for Teaching"
 layout: default
 parent: Blog
-nav_order: 1
+nav_order: 9
 ---
 
 # Picking a Model for Teaching

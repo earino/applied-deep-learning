@@ -2,7 +2,7 @@
 title: "Half a Percent: Thoughts and Results on Decoders for Text Classification"
 layout: default
 parent: Blog
-nav_order: 7
+nav_order: 3
 ---
 
 # Half a Percent: Thoughts and Results on Decoders for Text Classification

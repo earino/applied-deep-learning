@@ -2,7 +2,7 @@
 title: "When Better Means Worse"
 layout: default
 parent: Blog
-nav_order: 9
+nav_order: 1
 ---
 
 # When Better Means Worse
