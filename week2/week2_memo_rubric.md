@@ -45,11 +45,11 @@ The Week 2 Technical Note demonstrates that you can run controlled experiments, 
 
 | Level | Points | Criteria |
 |---|---|---|
-| **Excellent** | 18-20 | Reports the batch size comparison as a controlled experiment (one variable changed). Compares the effect magnitude to the validation noise floor and honestly assesses whether the difference is trustworthy. If the effect is small, says so rather than overclaiming. Offers a plausible mechanism (e.g., more optimizer steps per epoch gives rare classes more gradient influence) while acknowledging uncertainty. |
-| **Satisfactory** | 12-17 | Reports the comparison and notes the effect direction, but does not compare to the noise floor. May overclaim from a single-run comparison or present a mechanism as settled fact. |
+| **Excellent** | 18-20 | Reports the batch size comparison as a controlled experiment (one variable changed). Compares the effect magnitude to seed-to-seed variation from the reproducibility experiment and honestly assesses whether the difference is trustworthy. If the effect is small, says so rather than overclaiming. Offers a plausible mechanism (e.g., more optimizer steps per epoch gives rare classes more gradient influence) while acknowledging uncertainty. |
+| **Satisfactory** | 12-17 | Reports the comparison and notes the effect direction, but does not compare to seed variation or the noise floor. May overclaim from a single-run comparison or present a mechanism as settled fact. |
 | **Needs Improvement** | 0-11 | Missing batch size experiment, or reports a result without any interpretation or comparison to noise. |
 
-**What we're looking for:** Honest assessment of a potentially small effect. A student who reports "the difference was X, which is within/above the noise floor, so I can/cannot confidently say batch size matters" earns more credit than one who claims batch size is important based on a 0.5-point F1 difference.
+**What we're looking for:** Honest assessment of a potentially small effect. A student who reports "the batch size effect was X points, but seed variation alone was Y points, so I can/cannot trust this" earns more credit than one who claims batch size is important based on a 0.5-point F1 difference.
 
 ### 4. Error Analysis: What Does the Confusion Matrix Reveal? (25 points)
 
@@ -65,11 +65,11 @@ The Week 2 Technical Note demonstrates that you can run controlled experiments, 
 
 | Level | Points | Criteria |
 |---|---|---|
-| **Excellent** | 13-15 | Counts validation examples per class and identifies the sparse classes (17 with exactly 1 example, 38 with ≤5). Connects this to macro F1 reliability: single-example classes contribute coin-flip F1 to the average. Revisits experiment comparisons and assesses whether observed differences are larger than the noise floor. |
+| **Excellent** | 13-15 | Counts validation examples per class and identifies the sparse classes. Connects this to macro F1 reliability: single-example classes contribute coin-flip F1 to the average. Revisits experiment comparisons and assesses whether observed differences are larger than the noise floor. |
 | **Satisfactory** | 8-12 | Notes that some classes have few validation examples but does not quantify the effect on macro F1 stability. May not connect the sparsity to the trustworthiness of experiment comparisons. |
 | **Needs Improvement** | 0-7 | Missing, or mentions "noisy metrics" without any supporting analysis. Does not examine per-class validation counts. |
 
-**What we're looking for:** Epistemic honesty. The student should demonstrate that they understand their metrics have a noise floor and can estimate where that floor is. A student who says "my batch size experiment showed a 1-point improvement but that's within the noise from 17 coin-flip classes" is showing real engineering judgment.
+**What we're looking for:** Epistemic honesty. The student should demonstrate that they understand their metrics have a noise floor and can estimate where that floor is. A student who says "my batch size experiment showed a 1-point improvement but seed variation alone produced a similar difference" is showing real engineering judgment.
 
 ## General Notes
 
