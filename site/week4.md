@@ -10,6 +10,7 @@ nav_order: 4
 **Apr 29, 2026** · Block 1: Lecture · Block 2: Lab
 
 **Slides:** [View in browser](../week4/slides.html)
+ · [Download PDF](../week4/slides.pdf)
 
 **Lab notebook:** [week4_lab.ipynb](https://github.com/earino/applied-deep-learning/blob/main/week4/week4_lab.ipynb)
 
