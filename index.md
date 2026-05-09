@@ -27,3 +27,9 @@ Over six weeks, you work on one cumulative problem: classifying consumer financi
 | 5 | [Quantization and decoder economics](site/week5.html) | May 6 | Released |
 | 6 | [Distillation and final model decision](site/week6.html) | May 13 | Released |
 
+## Latest from the Blog
+
+**[Distillation acted like a calibration regularizer. There was a cheaper one.](site/blog/12_temperature_scaling_beats_distillation.html)** — I've been excited about Week 6 of this course — distillation — since the start of the term. Six weeks of fine-tuning, comparing, diagnosing, and compressing, and the experiments kept turning up th
+
+[All posts →](site/blog/)
+
