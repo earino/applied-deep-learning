@@ -45,10 +45,10 @@ Your memo should demonstrate you can name the property, evaluate the
 recipe shortlist for your scenario, read the noise floor honestly,
 and defend a specific recipe under specific constraints.
 
-Note: this memo's Prompt 5 doubles as the seed for your **Final Model
-Decision Dossier** (15% of the course grade, due before the final exam).
-The Week 6 memo is the smaller, in-scope version; the dossier asks for
-the full deployment-defense document.
+Note: Prompt 5 is the capstone synthesis of the term — it asks you to
+integrate every measurement axis from Weeks 1–6 into a defended
+deployment recommendation. Treat it as the engineering document you'd
+write if a hiring manager asked "what would you actually ship?"
 
 ## Rubric
 
@@ -204,7 +204,7 @@ defends the wildcard prediction, and makes cross-week reach concrete.
 - **Exact numbers will vary.** Different bootstrap seeds, different hyperparameter grid points across re-runs, different Kaggle session randomness will produce slightly different results. We grade reasoning about YOUR results, not whether you match specific targets.
 - **No single right answer.** The deployment recommendation, the compression-pair argument, and the hyperparameter winner are all genuinely open. We grade the quality of the argument, not the conclusion.
 - **Intellectual honesty is rewarded.** A student who writes "the grid difference at T_d=8 was within my CI width and I'm treating it as inconclusive" earns credit for engineering maturity — never loses credit for caution.
-- **Cross-week integration is the term capstone.** Sections 4 and 5 specifically reward students who treat Week 6 as the closing of an arc, not a standalone topic. The dossier (15% of the course grade) is the larger version of this synthesis — the memo's Prompt 5 is its seed.
+- **Cross-week integration is the term capstone.** Sections 4 and 5 specifically reward students who treat Week 6 as the closing of an arc, not a standalone topic. Prompt 5 is the synthesis exercise — the full integration of every measurement axis from the term into one defended deployment recommendation.
 - **Tables and figures do not count toward the page limit.** Use them.
 - **Readings can be cited.** Hinton 2015, Stanton 2021, Hebbalaguppe 2024, Busbridge 2025 (all in `readings/week6/`) are particularly relevant. Name the author in-line; we are not grading citation format.
 - **AI tools are allowed** for coding, experimentation, and drafting prose, but you must understand and be able to explain every claim in your memo.

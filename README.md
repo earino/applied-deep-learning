@@ -91,9 +91,8 @@ Each week contains:
 
 | Component | Weight | Notes |
 |---|---:|---|
-| Weekly memos (best 5 of 6) | **45%** | Submitted as HTML via Moodle, due Wednesday morning before next class |
+| Weekly memos (best 5 of 6) | **60%** | Submitted as HTML via Moodle, due Wednesday morning before next class |
 | Weekly quizzes (best 4 of 5, Weeks 2-6) | **15%** | In-class paper quiz, ~15 min at start of lecture |
-| Final model decision dossier | **15%** | One-shot deployment recommendation defended across all six weeks of measurements |
 | Final paper exam (~May 20) | **20%** | Closed-book |
 | Participation | **5%** | |
 
@@ -108,7 +107,7 @@ Memos are graded on **reasoning over conclusion** — there is no single "right"
 2. Each Wednesday: arrive ready for a paper quiz, attend lecture, complete the lab in Block 2
 3. Work through the homework notebook before the next Wednesday; the memo is embedded
 4. Submit memos as HTML via Moodle
-5. Build the dossier across the term; submit before the final exam
+5. Prepare for the final paper exam on the announced date
 
 ### For self-study learners (no enrollment, just curious)
 1. Read the [live site](https://earino.github.io/applied-deep-learning/) end-to-end as a structured 30-hour course
